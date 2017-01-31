@@ -1,0 +1,40 @@
+<jboss-deployment-structure>
+    <deployment>
+        <dependencies>
+            <module name="javax.annotation.api" export="true"/>
+            <module name="javax.interceptor.api" export="true"/>
+            <module name="javax.ejb.api" export="true"/>
+            <module name="javax.inject.api" export="true"/>
+            <module name="javax.enterprise.api" export="true"/>
+            <module name="javax.enterprise.concurrent.api"/>
+            <module name="javax.servlet.api" export="true"/>
+            <module name="javax.xml.bind.api" export="true"/>
+            <module name="javax.validation.api" export="true"/>
+            <module name="javax.el.api" export="true"/>
+            <module name="javax.transaction.api"/>
+            <module name="javax.mail.api"/>
+            <module name="javax.ws.rs.api"/>
+            <module name="org.joda.time"/>
+            <module name="org.postgresql"/>
+            <module name="com.google.guava"/>
+            <module name="org.jboss.as.jaxrs"/>
+            <module name="org.jboss.resteasy.resteasy-atom-provider"/>
+            <module name="org.jboss.resteasy.resteasy-cdi"/>
+            <module name="org.jboss.resteasy.resteasy-jackson2-provider"/>
+            <module name="org.jboss.resteasy.resteasy-jaxb-provider"/>
+            <module name="org.jboss.resteasy.resteasy-jsapi"/>
+            <module name="org.jboss.resteasy.resteasy-multipart-provider"/>
+            <module name="org.jboss.resteasy.resteasy-yaml-provider"/>
+            <module name="org.jboss.xnio"/>
+        </dependencies>
+        <exclude-subsystems>
+            <subsystem name="logging" />
+        </exclude-subsystems>
+        <!--<exclusions>-->
+            <!--<module name="org.slf4j"/>-->
+            <!--<module name="org.apache.log4j"/>-->
+            <!--<module name="org.apache.commons.logging"/>-->
+            <!--<module name="javaee.api"/>-->
+        <!--</exclusions>-->
+    </deployment>
+</jboss-deployment-structure>

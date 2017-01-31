@@ -1,0 +1,5 @@
+CREATE INDEX idx_booking_target_status_inavailability_btid_pid
+ON ixsi.booking_target_status_inavailability (booking_target_id ASC NULLS LAST, provider_id ASC NULLS LAST);
+
+CREATE INDEX idx_booking_target_status_inavailability_ia
+ON ixsi.booking_target_status_inavailability USING gist (inavailability);

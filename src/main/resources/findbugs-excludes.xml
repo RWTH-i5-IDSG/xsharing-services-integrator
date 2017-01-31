@@ -1,0 +1,6 @@
+<FindBugsFilter>
+    <Match>
+        <!-- Generated sources by JOOQ maven plugin -->
+        <Package name="~jooq\.db.*"/>
+    </Match>
+</FindBugsFilter>

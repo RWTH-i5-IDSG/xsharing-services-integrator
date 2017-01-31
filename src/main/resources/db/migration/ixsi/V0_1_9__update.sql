@@ -1,0 +1,5 @@
+ALTER TABLE ixsi.booking_target_status_inavailability
+DROP CONSTRAINT "PK_booking_target_status_inavailability";
+
+ALTER TABLE ixsi.booking_target_status_inavailability
+DROP COLUMN booking_id;

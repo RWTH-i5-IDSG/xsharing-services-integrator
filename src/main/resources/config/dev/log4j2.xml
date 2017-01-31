@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+
+    <Properties>
+        <Property name="logPattern">[%-5p] %d %c (%t) - %m%n</Property>
+    </Properties>
+
+    <Appenders>
+        <Console name="CONSOLE" target="SYSTEM_OUT">
+            <PatternLayout pattern="${logPattern}"/>
+        </Console>
+
+        <RollingRandomAccessFile name="FILE"
+                                 fileName="${sys:jboss.server.log.dir}/${application.name}.log"
+                                 filePattern="${sys:jboss.server.log.dir}/${application.name}.log.%d{yyyy-MM-dd}-%i.gz"
+                                 immediateFlush="false"
+                                 append="true">
+            <PatternLayout pattern="${logPattern}"/>
+            <Policies>
+                <SizeBasedTriggeringPolicy size="10 MB"/>
+                <TimeBasedTriggeringPolicy interval="1" modulate="true"/>
+            </Policies>
+            <DefaultRolloverStrategy max="20"/>
+        </RollingRandomAccessFile>
+
+        <RollingRandomAccessFile name="SIMPLE_FILE"
+                                 fileName="${sys:jboss.server.log.dir}/${application.name}.log"
+                                 filePattern="${sys:jboss.server.log.dir}/${application.name}.log.%i.gz"
+                                 immediateFlush="false"
+                                 append="true">
+            <PatternLayout pattern="${logPattern}"/>
+            <Policies>
+                <SizeBasedTriggeringPolicy size="10 MB"/>
+            </Policies>
+            <DefaultRolloverStrategy max="20"/>
+        </RollingRandomAccessFile>
+
+    </Appenders>
+    <Loggers>
+        <AsyncLogger name="org.jooq" level="INFO"/>
+        <!-- Disable the Jooq logo in logs -->
+        <!-- https://github.com/jOOQ/jOOQ/issues/4019 -->
+        <AsyncLogger name="org.jooq.Constants" level="WARN"/>
+
+        <!-- <AsyncLogger name="org.jboss.resteasy.core" level="DEBUG"/> -->
+        <!-- <AsyncLogger name="org.apache.http.wire" level="DEBUG"/> -->
+        <AsyncLogger name="org.apache.jasper" level="WARN"/>
+        <!-- <AsyncLogger name="de.rwth.idsg.mb.controller.PooledUraConnection" level="INFO"/> -->
+        
+        <AsyncRoot level="INFO">
+            <AppenderRef ref="SIMPLE_FILE"/>
+        </AsyncRoot>
+    </Loggers>
+</Configuration>

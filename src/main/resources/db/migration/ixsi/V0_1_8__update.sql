@@ -1,0 +1,2 @@
+ALTER TABLE ixsi.consumption
+ALTER COLUMN final DROP NOT NULL;
