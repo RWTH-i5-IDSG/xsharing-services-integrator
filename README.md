@@ -1,3 +1,10 @@
+# X-Sharing Services Integrator
+
+The X-Sharing Services Integrator (formerly known as Mobility Broker Adapter) implements the Interface for X-Sharing Information ([IXSI](/about/ixsi)).
+In a travel information system, it serves as the only communication point with car- and bikesharing services.
+Collecting station and vehicle information, tracking of their availability updates are some of its responsibilities.
+It is therefore the mediator between x-sharing services and remote components of the travel information system (the communication with the latter is achieved via RESTful interfaces) about such information and operations related to booking of vehicles.
+
 Requirements
 -----
 
